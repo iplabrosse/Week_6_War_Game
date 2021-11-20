@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  h1{
+    color: darkred;
+  }
+  
+  h2{
+    
+  }
+  
+  .hidden, .hide{
+    display: none;
+  }
+  
+  article.wrapper{
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid black;
+    background-color: azure; 
+    overflow: auto;
+    header{
+      //border: 1px solid red;
+      div.rules{
+        border: 1px solid blue;
+      }
+    }
+    section{
+      display: block;
+      float: left;
+      width: ~'calc(50% - 2px)';
+      border: 1px solid orange;
+      &.cpu{
+        border-color: cyan;
+      }
+      &.player{
+        border-color: magenta;
+      }
+      & > div{
+        width: ~'calc(50% - 10px)';
+        border: 1px dotted orange;
+        &.right{
+          float: right;
+        }
+        &.left{
+          float: left;
+        }
+        &.info{
+          padding: 10px;
+        }
+        &.card{
+          font-size: 62px;
+          min-height: 220px;
+          padding-top: 18%;
+          &.spades, &.clubs {
+            color: black;
+          }
+          &.diamonds, &.hearts{
+            color: red;
+          }
+          span.name{
+            
+          }
+          &.spades span.name:after{
+            content: "\2660";
+          }
+          &.diamonds span.name:after{
+            content: "\2666";
+          }
+          &.clubs span.name:after{
+            content: "\2663";
+          }
+          &.hearts span.name:after{
+            content: "\2665";
+          }
+        }
+        div{
+          &[data-points]{
+            &:after{
+              content: attr(data-points);
+              margin: 0 0 0 5px;
+            }
+          }
+          &[data-cards-left]{
+            &:after{
+              content: attr(data-cards-left);
+              margin: 0 0 0 5px;
+            }
+          }
+          &[data-games-won]{
+            &:after{
+              content: attr(data-games-won);
+              margin: 0 0 0 5px;
+            }
+          }
+        }
+      }
+    }
+    footer{
+      button.draw{
+        margin: 10px;
+        padding: 10px;
+        font-size: 22px;
+      }
+    }
+  }
+  
